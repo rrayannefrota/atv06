@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Extração de Dados</title>
+</head>
+<body>
+    <script>
+        const original = "nome:João Silva;email:joao.silva@ifce.edu.br;curso:Técnico em Informática;matricula:202312345";
+
+    const nome = original.slice(original.indexOf("nome:")+5, original.indexOf(";email"));
+    const email = original.slice(original.indexOf("email:")+6, original.indexOf(";curso"));
+    const posEmail = original.indexOf("email:");
+    const emailValido = email.endsWith("@ifce.edu.br");
+    const matricula = original.slice(original.indexOf("matricula:")+10);
+    const matriculaValida = matricula.startsWith("2023");
+    const curso = "Informática para Internet";
+    const dadosIgual = original.replace(/:/g, "=");
+
+    console.log(`Olá, ${nome}! Seu e-mail institucional é ${email} e você está matriculado no curso de ${curso}.`);
+    </script>
+</body>
+</html>
